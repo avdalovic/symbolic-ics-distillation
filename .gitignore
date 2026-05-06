@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local outputs
+artifacts/checkpoints/*
+!artifacts/checkpoints/.gitkeep
+artifacts/model_exports/*
+!artifacts/model_exports/.gitkeep
+artifacts/results/*
+!artifacts/results/.gitkeep
+artifacts/symbolic_equations/*
+!artifacts/symbolic_equations/.gitkeep
+runs/
+wandb/
+
+# Raw or cached data
+data/swat/raw/
+data/wadi/raw/
+data/**/*.csv
+data/**/*.csv.gz
+data/**/*.parquet
+data/**/*.feather
+data/**/*.h5
+data/**/*.hdf5
+data/**/*.pkl
+data/**/*.pickle
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+
+# Keep repository placeholders
+!artifacts/**/.gitkeep
+!data/**/.gitkeep
+!data/README.md

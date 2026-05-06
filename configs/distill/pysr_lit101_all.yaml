@@ -1,0 +1,5 @@
+distill:
+  method: pysr
+  target: LIT101
+  input_set: all_variables
+  implemented: false

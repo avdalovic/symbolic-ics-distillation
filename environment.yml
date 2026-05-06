@@ -1,0 +1,20 @@
+name: symbolic-ics
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - pytest
+  - pytorch
+  - omegaconf
+  - pyyaml
+  - pip
+  - pip:
+      # Optional later for symbolic regression:
+      # - pysr
+      # - sympy
+      - -e .[dev]

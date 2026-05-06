@@ -1,0 +1,12 @@
+numpy
+pandas
+scikit-learn
+matplotlib
+pytest
+torch
+omegaconf
+pyyaml
+
+# Optional later for symbolic regression:
+# pysr
+# sympy

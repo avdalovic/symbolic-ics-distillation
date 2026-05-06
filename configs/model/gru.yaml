@@ -1,0 +1,16 @@
+model:
+  name: direct_trajectory_predictor
+  architecture: gru
+  history_len: 60
+  horizon: 1
+  sample_stride: 1
+  target_sensor_only: true
+  trajectory_label_mode: t_plus_1
+  hidden_dim: 128
+  num_layers: 1
+  dropout: 0.0
+  prediction_mode: deterministic
+  horizon_weighting: uniform
+  horizon_gamma: 0.9
+  horizon_loss_weights: null
+  score_aggregation: mean

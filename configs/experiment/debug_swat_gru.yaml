@@ -1,0 +1,12 @@
+experiment:
+  name: debug_swat_gru
+  dataset_cfg: swat
+  model_cfg: gru
+  train_cfg: default_train
+  export_cfg: prediction_export
+  evaluation_cfg: detection
+  overrides:
+    - train.epochs=1
+    - train.max_train_batches=2
+    - train.max_val_batches=2
+    - train.ckpt_dir=artifacts/checkpoints/debug/swat/gru_h1

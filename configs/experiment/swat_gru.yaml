@@ -1,0 +1,9 @@
+experiment:
+  name: swat_gru
+  dataset_cfg: swat
+  model_cfg: gru
+  train_cfg: default_train
+  export_cfg: prediction_export
+  evaluation_cfg: detection
+  overrides:
+    - train.ckpt_dir=artifacts/checkpoints/swat/gru_h1

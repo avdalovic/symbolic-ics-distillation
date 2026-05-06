@@ -1,0 +1,9 @@
+experiment:
+  name: swat_mlp_current
+  dataset_cfg: swat
+  model_cfg: mlp_current
+  train_cfg: default_train
+  export_cfg: prediction_export
+  evaluation_cfg: detection
+  overrides:
+    - train.ckpt_dir=artifacts/checkpoints/swat/mlp_current_h1

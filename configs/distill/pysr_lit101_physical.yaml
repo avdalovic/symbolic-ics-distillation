@@ -1,0 +1,5 @@
+distill:
+  method: pysr
+  target: LIT101
+  input_set: manual_physical_variables
+  implemented: false

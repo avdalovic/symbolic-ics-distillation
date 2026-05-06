@@ -1,0 +1,28 @@
+dataset:
+  name: wadi
+  train_csv: data/wadi/raw/wadi_train.csv
+  test_csv: data/wadi/raw/wadi_test.csv
+  # TODO: If the authorized CSV schema changes, replace null with an explicit tag list to lock ordering.
+  tag_columns: null
+  time_column: Row
+  label_column: Attack
+  sampling_stride: 10
+  sample_interval_sec: 1.0
+  drop_policy: full_problematic
+  drop_problematic_features: false
+  drop_columns: []
+  window_size: 60
+  horizon: 1
+  val_ratio: 0.1
+  batch_size: 128
+  num_workers: 4
+  shuffle_train: true
+  normalization:
+    mode: zscore
+    std_floor: 0.01
+  max_samples: null
+  debug_first_k: null
+  debug_repeat_first: false
+  debug_repeat_length: null
+  sensor_idx: null
+  actuator_idx: null
