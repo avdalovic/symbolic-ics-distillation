@@ -9,6 +9,7 @@ from ics_symbolic_distill.data.normalization import (
 from ics_symbolic_distill.distillation import (
     align_mlp_to_gru_overlap,
     build_name_mapping,
+    compute_compact_temporal_summary_features,
     compute_temporal_summary_features,
     squeeze_horizon_one,
 )
@@ -67,6 +68,56 @@ def test_temporal_feature_names_and_shape() -> None:
     assert "LIT101_mean_10" in names
     assert "FIT201_rate_5" in names
     assert mapping["temporal_feature_name_to_index"]["MV101_delta_1"] == names.index("MV101_delta_1")
+
+
+def test_temporal_compact_outputs_remove_redundant_columns() -> None:
+    base_names = ["FIT101", "LIT101", "FIT201", "MV101", "P101"]
+    feature_columns = base_names + [f"TAG{i:03d}" for i in range(46)]
+    window = np.arange(3 * 51 * 12, dtype=np.float32).reshape(3, 51, 12)
+
+    full_features, full_names, full_mapping = compute_temporal_summary_features(
+        window,
+        feature_columns,
+        dt_model_step=1.0,
+    )
+    compact_features, compact_names, compact_mapping = compute_compact_temporal_summary_features(
+        window,
+        feature_columns,
+        dt_model_step=1.0,
+    )
+    current_plus_compact = np.concatenate([window[:, :, -1], compact_features], axis=1)
+
+    assert full_features.shape == (3, 51 * 11)
+    assert len(full_names) == 51 * 11
+    assert full_mapping["operations"] == [
+        "current",
+        "delta_1",
+        "delta_5",
+        "delta_10",
+        "rate_1",
+        "rate_5",
+        "rate_10",
+        "mean_5",
+        "mean_10",
+        "std_5",
+        "std_10",
+    ]
+    assert compact_features.shape == (3, 51 * 7)
+    assert current_plus_compact.shape == (3, 51 + 51 * 7)
+    assert compact_mapping["operations"] == [
+        "delta_1",
+        "delta_5",
+        "delta_10",
+        "mean_5",
+        "mean_10",
+        "std_5",
+        "std_10",
+    ]
+    assert not any(name.endswith("_current") for name in compact_names)
+    assert not any("_rate_" in name for name in compact_names)
+    assert "LIT101_delta_1" in compact_names
+    assert "LIT101_mean_10" in compact_names
+    assert "FIT101_std_5" in compact_names
 
 
 def test_explicit_name_mapping_contains_key_swat_tags() -> None:

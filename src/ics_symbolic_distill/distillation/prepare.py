@@ -146,6 +146,89 @@ def compute_temporal_summary_features(
     return features, names, mapping
 
 
+def _subset_temporal_features(
+    temporal_features: np.ndarray,
+    temporal_names: Sequence[str],
+    operations: Sequence[str],
+    keep_operations: Sequence[str],
+) -> tuple[np.ndarray, list[str], dict[str, Any]]:
+    keep = set(keep_operations)
+    num_ops = len(operations)
+    if num_ops <= 0:
+        raise ValueError("operations must not be empty")
+    if len(temporal_names) % num_ops != 0:
+        raise ValueError("temporal_names length must be divisible by operation count")
+    if temporal_features.shape[1] != len(temporal_names):
+        raise ValueError("temporal_features column count does not match temporal_names")
+
+    keep_indices = [i for i, name in enumerate(temporal_names) if operations[i % num_ops] in keep]
+    names = [str(temporal_names[i]) for i in keep_indices]
+    features = temporal_features[:, keep_indices].astype(np.float32)
+    mapping = {
+        "temporal_feature_name_to_index": {name: i for i, name in enumerate(names)},
+        "temporal_feature_safe_names": {name: _safe_name("x", name) for name in names},
+        "safe_name_to_original": {_safe_name("x", name): name for name in names},
+        "source_operations": list(operations),
+        "operations": list(keep_operations),
+    }
+    return features, names, mapping
+
+
+def compact_temporal_operations(*, dt_model_step: float = 1.0) -> tuple[list[str], str]:
+    """Return the conservative compact temporal operation set.
+
+    Current features are excluded because they duplicate
+    ``distill_inputs_current_raw.npy``. Rate features are excluded unless a
+    future caller records a real physical sampling interval explicitly; the
+    current pipeline only records model-step units, so deltas carry the same
+    information without redundant linear scaling.
+    """
+
+    _ = float(dt_model_step)
+    return (
+        ["delta_1", "delta_5", "delta_10", "mean_5", "mean_10", "std_5", "std_10"],
+        "current is stored separately; rates are excluded because no physical dt_seconds is recorded.",
+    )
+
+
+def compute_compact_temporal_summary_features(
+    window_raw: np.ndarray,
+    feature_columns: Sequence[str],
+    *,
+    dt_model_step: float = 1.0,
+) -> tuple[np.ndarray, list[str], dict[str, Any]]:
+    """Create the compact nonredundant temporal feature matrix."""
+
+    full_features, full_names, full_mapping = compute_temporal_summary_features(
+        window_raw,
+        feature_columns,
+        dt_model_step=dt_model_step,
+    )
+    keep_operations, reason = compact_temporal_operations(dt_model_step=dt_model_step)
+    compact_features, compact_names, compact_mapping = _subset_temporal_features(
+        full_features,
+        full_names,
+        full_mapping["operations"],
+        keep_operations,
+    )
+    compact_mapping.update(
+        {
+            "history_len": full_mapping["history_len"],
+            "dt_model_step": full_mapping["dt_model_step"],
+            "compact_policy": reason,
+        }
+    )
+    return compact_features, compact_names, compact_mapping
+
+
+def build_matrix_name_mapping(names: Sequence[str]) -> dict[str, Any]:
+    return {
+        "feature_name_to_index": {str(name): i for i, name in enumerate(names)},
+        "feature_safe_names": {str(name): _safe_name("x", str(name)) for name in names},
+        "safe_name_to_original": {_safe_name("x", str(name)): str(name) for name in names},
+    }
+
+
 def _load_export(export_dir: str | Path) -> dict[str, Any]:
     root = Path(export_dir)
     metadata_path = root / "metadata.json"
@@ -378,6 +461,26 @@ def prepare_distillation_data(
         feature_columns,
         dt_model_step=dt_model_step,
     )
+    compact_operations, compact_policy = compact_temporal_operations(dt_model_step=dt_model_step)
+    compact_temporal_features, compact_temporal_names, compact_temporal_mapping = _subset_temporal_features(
+        temporal_features,
+        temporal_names,
+        temporal_mapping["operations"],
+        compact_operations,
+    )
+    compact_temporal_mapping.update(
+        {
+            "history_len": temporal_mapping["history_len"],
+            "dt_model_step": temporal_mapping["dt_model_step"],
+            "compact_policy": compact_policy,
+        }
+    )
+    current_plus_compact_features = np.concatenate(
+        [current_raw_gru.astype(np.float32), compact_temporal_features.astype(np.float32)],
+        axis=1,
+    )
+    current_plus_compact_names = feature_columns + compact_temporal_names
+    current_plus_compact_mapping = build_matrix_name_mapping(current_plus_compact_names)
     name_mapping = build_name_mapping(feature_columns, target_columns, sensor_idx)
     normalization_summary = describe_normalization_stats(stats, feature_columns)
 
@@ -390,6 +493,8 @@ def prepare_distillation_data(
         "distill_actual_next_raw.npy": actual_next_raw_gru.astype(np.float32),
         "distill_actual_delta_raw.npy": actual_delta_raw.astype(np.float32),
         "distill_gru_temporal_features_raw.npy": temporal_features.astype(np.float32),
+        "distill_gru_temporal_features_compact_raw.npy": compact_temporal_features.astype(np.float32),
+        "distill_gru_current_plus_temporal_compact_raw.npy": current_plus_compact_features.astype(np.float32),
     }
     finite_checks = _check_finite(arrays)
     if not all(finite_checks.values()):
@@ -413,6 +518,16 @@ def prepare_distillation_data(
     write_json(out_dir / "distill_name_mapping.json", name_mapping)
     write_json(out_dir / "distill_gru_temporal_feature_names.json", temporal_names)
     write_json(out_dir / "distill_gru_temporal_name_mapping.json", temporal_mapping)
+    write_json(out_dir / "distill_gru_temporal_feature_names_compact.json", compact_temporal_names)
+    write_json(out_dir / "distill_gru_temporal_name_mapping_compact.json", compact_temporal_mapping)
+    write_json(
+        out_dir / "distill_gru_current_plus_temporal_compact_feature_names.json",
+        current_plus_compact_names,
+    )
+    write_json(
+        out_dir / "distill_gru_current_plus_temporal_compact_name_mapping.json",
+        current_plus_compact_mapping,
+    )
 
     lit101 = lit101_sanity_summary(
         current_raw=current_raw_gru,
@@ -455,6 +570,21 @@ def prepare_distillation_data(
         "alignment_rule": "MLP exports aligned to GRU anchors by taking the last N_gru MLP samples.",
         "dt_model_step": float(dt_model_step),
         "array_shapes": {name: list(value.shape) for name, value in arrays.items()},
+        "temporal_feature_counts": {
+            "full": int(temporal_features.shape[1]),
+            "compact": int(compact_temporal_features.shape[1]),
+            "current_plus_compact": int(current_plus_compact_features.shape[1]),
+        },
+        "temporal_operations": {
+            "full": list(temporal_mapping["operations"]),
+            "compact": list(compact_operations),
+        },
+        "temporal_output_notes": [
+            "The full temporal output includes current and rate features for completeness.",
+            "The compact temporal output excludes current because it duplicates distill_inputs_current_raw.npy.",
+            "The compact temporal output excludes rate features because no physical dt_seconds is recorded; with dt_model_step=1, rate_k is a linear rescaling of delta_k.",
+            "The current_plus_compact matrix is the recommended default input matrix for GRU temporal-summary surrogate PySR experiments.",
+        ],
         "finite_checks": finite_checks,
         "alignment_checks": {
             "current_raw_gru_vs_aligned_mlp_max_abs": current_alignment_max_abs,
