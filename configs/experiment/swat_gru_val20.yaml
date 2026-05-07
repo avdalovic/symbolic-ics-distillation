@@ -1,0 +1,10 @@
+experiment:
+  name: swat_gru_val20
+  dataset_cfg: swat
+  model_cfg: gru
+  train_cfg: default_train
+  export_cfg: prediction_export
+  evaluation_cfg: detection
+  overrides:
+    - dataset.val_ratio=0.20
+    - train.ckpt_dir=artifacts/checkpoints/swat/gru_h1_val20
