@@ -1,0 +1,52 @@
+{
+  "LIT101": {
+    "local_features": ["LIT101", "FIT101", "FIT201", "MV101", "P101"],
+    "expected_patterns": {
+      "actual_delta": ["FIT101", "FIT201"],
+      "actual_next": ["LIT101", "FIT101", "FIT201"],
+      "mlp_delta": ["FIT101", "FIT201"],
+      "mlp_next": ["LIT101"]
+    },
+    "notes": "Tank 1 level. Delta should reflect inflow minus outflow. Next value should include persistence."
+  },
+  "FIT101": {
+    "local_features": ["FIT101", "MV101", "LIT101"],
+    "expected_patterns": {
+      "actual_next": ["FIT101", "MV101"],
+      "actual_delta": ["MV101"],
+      "mlp_next": ["FIT101", "MV101"],
+      "mlp_delta": ["MV101"]
+    },
+    "notes": "Stage 1 inflow meter. Expected to relate to inlet valve MV101 and possibly persistence."
+  },
+  "FIT201": {
+    "local_features": ["FIT201", "P101", "P102", "LIT101"],
+    "expected_patterns": {
+      "actual_next": ["FIT201", "P101"],
+      "actual_delta": ["P101"],
+      "mlp_next": ["FIT201", "P101"],
+      "mlp_delta": ["P101"]
+    },
+    "notes": "Stage 2 flow meter. Expected to relate to pump state P101/P102 and possibly persistence."
+  },
+  "LIT301": {
+    "local_features": ["LIT301", "FIT301", "DPIT301", "MV301", "MV302", "MV303", "MV304", "P301", "P302"],
+    "expected_patterns": {
+      "actual_next": ["LIT301"],
+      "actual_delta": ["FIT301", "DPIT301"],
+      "mlp_next": ["LIT301"],
+      "mlp_delta": ["FIT301", "DPIT301"]
+    },
+    "notes": "Stage 3 tank/level behavior. Expected to involve stage-3 local variables, but exact equation should not be assumed."
+  },
+  "DPIT301": {
+    "local_features": ["DPIT301", "P302", "P301", "MV301", "MV302", "FIT301", "LIT301"],
+    "expected_patterns": {
+      "actual_next": ["DPIT301", "P302"],
+      "actual_delta": ["P302"],
+      "mlp_next": ["DPIT301", "P302"],
+      "mlp_delta": ["P302"]
+    },
+    "notes": "Stage 3 differential pressure. Expected to involve local pump/flow/filter variables, but exact equation should not be assumed."
+  }
+}

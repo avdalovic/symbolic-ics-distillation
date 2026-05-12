@@ -100,5 +100,5 @@ sensitivity outputs for inspection, but do not use them as the default top-k
 selector while floored channels are present.
 
 GRU attribution is deferred because it requires attribution over `[N, 51, 60]`
-windows and a separate decision about how to aggregate time, feature, and
+windows and a separate decision on how to aggregate time, feature, and
 temporal-summary contributions.

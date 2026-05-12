@@ -7,36 +7,54 @@ __pycache__/
 .venv/
 venv/
 
-# Local outputs
-artifacts/checkpoints/*
-!artifacts/checkpoints/.gitkeep
-artifacts/model_exports/*
-!artifacts/model_exports/.gitkeep
-artifacts/results/*
-!artifacts/results/.gitkeep
-artifacts/symbolic_equations/*
-!artifacts/symbolic_equations/.gitkeep
+# OS/editor
+.DS_Store
+
+# Local data and generated artifacts
+artifacts/
+checkpoints/
+models/
 runs/
 wandb/
+.julia/
 
-# Raw or cached data
-data/swat/raw/
-data/wadi/raw/
+# Keep data documentation trackable, but ignore all local/raw data.
+data/*
+!data/README.md
+!data/**/
+data/**/raw/*
 data/**/*.csv
-data/**/*.csv.gz
+data/**/*.xlsx
 data/**/*.parquet
-data/**/*.feather
-data/**/*.h5
-data/**/*.hdf5
-data/**/*.pkl
-data/**/*.pickle
+data/**/*.npy
+data/**/*.npz
+!data/**/.gitkeep
+
+# Logs and detached runs
+*.log
+nohup.out
+
+# Large arrays, model weights, and cached tables
 *.npy
 *.npz
 *.pt
 *.pth
 *.ckpt
+*.parquet
+*.csv.gz
+*.feather
+*.h5
+*.hdf5
+*.pkl
+*.pickle
 
-# Keep repository placeholders
-!artifacts/**/.gitkeep
-!data/**/.gitkeep
-!data/README.md
+# Keep lightweight repository docs/placeholders
+!paper_artifacts/
+!paper_artifacts/**
+!configs/
+!scripts/
+!tests/
+!docs/
+!README.md
+!environment.yml
+!requirements.txt
