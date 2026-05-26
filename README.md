@@ -2,9 +2,9 @@
 
 Automatic Symbolic Intrusion Detection for Industrial Control Systems.
 
-ASID-ICS learns compact state-space equations from benign ICS telemetry. The method
-finds equation with evolutionary symbolic regression
-over a fixed operator grammar: addition, subtraction, and multiplication.
+ASID-ICS learns compact state-space equations from benign ICS telemetry. The
+method finds equations with evolutionary symbolic regression over a fixed
+operator grammar: addition, subtraction, and multiplication.
 
 
 ## What Is Included
@@ -55,17 +55,42 @@ local-only.
 
 ## Install
 
+The lightweight artifact install works on Linux, macOS, and Windows with
+Python 3.11 or newer. It is enough to regenerate the paper tables/heatmaps and
+run the tests.
+
+Linux/macOS:
+
 ```bash
-conda env create -f environment.yml
-conda activate symbolic-ics
-python -m pip install -e ".[dev,distill]"
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip
+python -m pip install -r requirements.txt
+python -m pip install -e ".[dev,plot]"
 ```
 
-Fallback:
+Windows PowerShell:
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -U pip
+python -m pip install -r requirements.txt
+python -m pip install -e ".[dev,plot]"
+```
+
+Conda is also supported:
 
 ```bash
-python -m pip install -r requirements.txt
-python -m pip install -e ".[dev,distill]"
+conda env create -f environment.yml
+conda activate symbolic-ics-artifact
+```
+
+Full PySR discovery reruns require the additional symbolic-regression stack:
+
+```bash
+python -m pip install -r requirements-full.txt
+python -m pip install -e ".[dev,plot,distill]"
 ```
 
 ## Validate
@@ -92,6 +117,13 @@ python scripts/generate_paper_artifacts_v2.py
 
 This command does not rerun PySR and does not require raw SWaT/WADI data. It
 uses the committed `results/{swat,wadi,batadal}/detection_grid.csv` files.
+The regenerated main table should contain these ASID-ICS rows:
+
+```text
+SWaT:    F1=86.3446, eTaF1=67.6095, FPA=4
+WADI:    F1=63.3663, eTaF1=71.3327, FPA=0
+BATADAL: F1=66.3768, eTaF1=84.9644, FPA=0
+```
 
 To check that the data filenames are in place after setup:
 

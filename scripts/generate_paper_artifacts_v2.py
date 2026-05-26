@@ -22,6 +22,12 @@ from ics_symbolic_distill.detection import compute_detection_metrics
 
 OUT_DIR = REPO_ROOT / "paper_artifacts" / "final_v2"
 METRICS = ["Prec", "Rec", "F1", "eTaP", "eTaR", "eTaF1", "FPA", "Scen"]
+PDF_METADATA = {
+    "Creator": "ASID-ICS artifact",
+    "Producer": "ASID-ICS artifact",
+    "CreationDate": None,
+    "ModDate": None,
+}
 S_VALUES_EXT = [
     0.1,
     0.2,
@@ -613,7 +619,7 @@ def plot_heatmaps(results: dict[str, dict[str, Any]], summary: pd.DataFrame) -> 
     for dataset, cfg in DATASETS.items():
         fig, ax = plt.subplots(figsize=(3.5, 2.45), constrained_layout=True)
         draw(ax, dataset, colorbar=True)
-        fig.savefig(OUT_DIR / f"heatmap_{cfg['slug']}.pdf")
+        fig.savefig(OUT_DIR / f"heatmap_{cfg['slug']}.pdf", metadata=PDF_METADATA)
         plt.close(fig)
 
     fig, axes = plt.subplots(1, 3, figsize=(7.2, 2.35), constrained_layout=True)
@@ -622,7 +628,7 @@ def plot_heatmaps(results: dict[str, dict[str, Any]], summary: pd.DataFrame) -> 
         im = draw(ax, dataset, colorbar=False)
     if im is not None:
         fig.colorbar(im, ax=axes.ravel().tolist(), label="eTaF1")
-    fig.savefig(OUT_DIR / "heatmap_combined.pdf")
+    fig.savefig(OUT_DIR / "heatmap_combined.pdf", metadata=PDF_METADATA)
     plt.close(fig)
 
 
