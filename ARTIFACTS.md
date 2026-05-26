@@ -67,18 +67,29 @@ for path in required:
 PY
 ```
 
-2. Regenerate paper tables from frozen local run outputs:
+2. Regenerate paper tables from the committed result snapshot:
 
 ```bash
 python scripts/generate_paper_artifacts_v2.py
 ```
 
-This requires authorized SWaT/WADI data and the local ignored `artifacts/`
-directories. It does not rerun PySR.
+This does not require raw SWaT/WADI data and does not rerun PySR.
 
-3. Rerun symbolic discovery:
+3. Prepare data:
 
 ```bash
+python data/swat/process_SWaT.py
+python data/wadi/process_WADI.py
+python scripts/prepare_batadal.py   # optional; processed BATADAL is committed
+```
+
+SWaT/WADI require authorized iTrust/SUTD downloads first. See the dataset
+README files under `data/`.
+
+4. Rerun symbolic discovery:
+
+```bash
+python scripts/run_swat_1sec_delta_local_diagnostic.py --out artifacts/swat_1sec/delta_full --flat-pareto-layout
 python scripts/run_wadi_1sec_delta_full.py --out artifacts/wadi_1sec/delta_full
 python scripts/run_batadal_delta_full.py --out artifacts/batadal/delta_full
 ```

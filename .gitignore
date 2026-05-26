@@ -22,12 +22,17 @@ wandb/
 data/*
 !data/README.md
 !data/**/
+!data/**/README.md
+!data/**/process_*.py
 data/**/raw/*
 data/**/*.csv
 data/**/*.xlsx
 data/**/*.parquet
 data/**/*.npy
 data/**/*.npz
+!data/batadal/processed/
+!data/batadal/processed/*.csv
+!data/batadal/processed/*.json
 !data/**/.gitkeep
 
 # Logs and detached runs

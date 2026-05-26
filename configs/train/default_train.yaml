@@ -1,0 +1,14 @@
+train:
+  trainer: direct_trajectory_predictor
+  epochs: 100
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  optimizer: adamw
+  device: cuda
+  grad_clip: 1.0
+  log_interval: 10
+  ckpt_dir: artifacts/checkpoints/default
+  ckpt_every: 0
+  seed: 42
+  threshold_quantile: 0.99
+  detection_metric_space: normalized

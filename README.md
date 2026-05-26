@@ -18,7 +18,7 @@ over a fixed operator grammar: addition, subtraction, and multiplication.
 - `scripts/run_batadal_delta_full.py`: BATADAL delta symbolic discovery,
   quality filtering, and detection.
 - `scripts/generate_paper_artifacts_v2.py`: regenerates the final paper tables
-  and sensitivity figures from frozen local experiment outputs.
+  and sensitivity figures from the committed `results/` snapshot.
 - `configs/asid_ics/`: per-dataset public configuration summaries.
 - `results/`: compact reviewer-facing result snapshot: selected equations,
   Pareto-front CSVs, detection grids, per-sensor residual/alarm statistics, and
@@ -27,8 +27,14 @@ over a fixed operator grammar: addition, subtraction, and multiplication.
 
 ## Data
 
-Raw SWaT and WADI data must be obtained from the dataset providers. Place
-authorized local copies at:
+Raw SWaT and WADI data must be obtained from the dataset providers. See:
+
+```text
+data/swat/README.md
+data/wadi/README.md
+```
+
+After processing, the expected local paths are:
 
 ```text
 data/swat/raw/swat_train.csv
@@ -37,12 +43,15 @@ data/wadi/raw/wadi_train.csv
 data/wadi/raw/wadi_test.csv
 ```
 
-BATADAL is public; local BATADAL preparation is handled by
-`scripts/prepare_batadal.py`.
+BATADAL is public and the processed CSVs used by the paper are included under:
+
+```text
+data/batadal/processed/
+```
 
 Raw data, model checkpoints, large arrays, logs, and full generated run
-directories are ignored by git. Before a public push, `git ls-files data`
-should list only `data/README.md`.
+directories are ignored by git. `data/swat/raw/` and `data/wadi/raw/` remain
+local-only.
 
 ## Install
 
@@ -75,19 +84,32 @@ paper_artifacts/final_v2/main_table_one_row.csv
 paper_artifacts/final_v2/table_main_one_row.tex
 ```
 
-To regenerate the table and heatmaps from frozen local experiment outputs:
+To regenerate the table and heatmaps from the committed result snapshot:
 
 ```bash
 python scripts/generate_paper_artifacts_v2.py
 ```
 
-This command does not rerun PySR. It requires the local raw datasets and frozen
-experiment outputs under `artifacts/`. Reviewers without SWaT/WADI access can
-inspect the committed `results/` and `paper_artifacts/final_v2/` files.
+This command does not rerun PySR and does not require raw SWaT/WADI data. It
+uses the committed `results/{swat,wadi,batadal}/detection_grid.csv` files.
+
+To check that the data filenames are in place after setup:
+
+```bash
+python scripts/check_data_paths.py --config configs/experiment/swat_mlp_current_val20.yaml
+test -f data/wadi/raw/wadi_train.csv && test -f data/wadi/raw/wadi_test.csv
+test -f data/batadal/processed/train.csv
+```
 
 ## Rerun Discovery
 
 Full reruns require authorized raw data and can take hours.
+
+```bash
+python scripts/run_swat_1sec_delta_local_diagnostic.py \
+  --out artifacts/swat_1sec/delta_full \
+  --flat-pareto-layout
+```
 
 ```bash
 python scripts/run_wadi_1sec_delta_full.py \
