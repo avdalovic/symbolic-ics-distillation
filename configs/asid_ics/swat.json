@@ -1,0 +1,31 @@
+{
+  "dataset": "SWaT",
+  "sampling_rate": "1 second",
+  "train_rows": 495000,
+  "test_rows": 449000,
+  "process_variables": 51,
+  "target": "sensor_delta",
+  "operator_grammar": ["+", "-", "*"],
+  "sample_policy": "coverage_stratified",
+  "sample_size": 12000,
+  "quality_filter": {
+    "finite_predictions_on_training": true,
+    "holdout_cusum_zero_alarm": true,
+    "residual_tail_ratio": "p99(abs(residual)) / median(abs(residual)) <= 50"
+  },
+  "actuator_model": "persistence",
+  "paper_operating_point": {
+    "S": 1.2,
+    "G": 15.0
+  },
+  "geco_operating_point": {
+    "S": 1.42,
+    "G": 5.98
+  },
+  "monitored_variables": {
+    "total": 39,
+    "sensors": 14,
+    "actuators": 25
+  },
+  "public_results": "results/swat"
+}

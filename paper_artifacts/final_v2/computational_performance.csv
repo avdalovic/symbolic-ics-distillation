@@ -1,0 +1,7 @@
+Dataset,Method,Training Time,CPU Threads,Approx Core-Hours,Live Classification Time,template_combinations_or_pysr_iterations,timing_source
+SWaT,ASID-ICS,4.80 h,1,4.801826797922453,0.0007 ms,25 targets x 400 PySR iterations,measured per-target PySR metadata from compute_summary.csv
+SWaT,GeCo,15.10 h,128,1932.8,0.2 ms,1.77M template tests,GeCo Table 5 values supplied in task
+WADI,ASID-ICS,13.93 h,1,13.93160852783256,0.0007 ms,85 targets x 400 PySR iterations,measured per-target PySR metadata from compute_summary.csv
+WADI,GeCo,1125.60 h,128,144076.8,0.1 ms,73.87M template tests,GeCo Table 5 values supplied in task
+BATADAL,ASID-ICS,0.66 h,1,0.6639498031139374,0.0007 ms,31 targets x 400 PySR iterations,measured per-target PySR metadata from compute_summary.csv
+BATADAL,GeCo,0.06 h,128,7.680000000000001,1.7 ms,1.04M template tests,GeCo Table 5 values supplied in task
