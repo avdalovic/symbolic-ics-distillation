@@ -29,5 +29,4 @@ data/swat/raw/swat_test.csv
 ```
 
 The processor removes whitespace from column names, converts process variables
-to numeric values, and replaces the attack labels with the 31 documented SWaT
-attack windows used by this artifact.
+to numeric values, and replaces the attack labels with the documented SWaT attack windows used by this artifact.
