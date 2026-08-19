@@ -1,0 +1,3 @@
+complexity,loss,equation,score,sympy_format,lambda_format,fit_mse,fit_rmse,fit_mae,fit_r2_against_constant,holdout_mse,holdout_rmse,holdout_mae,holdout_r2_against_constant,equation_features,evaluation_error
+1,4.87891e-19,6.9849193e-10,0.0,6.98491930000000e-10,PySRFunction(X=>6.98491930000000E-10),4.87890976275125e-19,6.9849193e-10,6.984919299999999e-10,-inf,4.878909762751248e-19,6.984919299999999e-10,6.984919299999999e-10,-inf,[],
+3,0.0,3_P_003_STATUS - 2_MV_002_STATUS,inf,3_P_003_STATUS - 2_MV_002_STATUS,PySRFunction(X=>3_P_003_STATUS - 2_MV_002_STATUS),0.0,0.0,0.0,-inf,0.0,0.0,0.0,-inf,"[""2_MV_002_STATUS"", ""3_P_003_STATUS""]",

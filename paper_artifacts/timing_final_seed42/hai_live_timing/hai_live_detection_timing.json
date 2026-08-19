@@ -1,0 +1,51 @@
+{
+  "dataset": "HAI",
+  "configuration": "guarded_r13_headline",
+  "selected_equations": "paper_artifacts/selected_models/hai/selected_equations_guarded_r13.csv",
+  "S": 2.5,
+  "G": 12.0,
+  "n_test_snapshots": 402000,
+  "test_sequence_lengths": [
+    43200,
+    118800,
+    108000,
+    39600,
+    92400
+  ],
+  "n_monitored_channels": 47,
+  "n_symbolic_channels": 45,
+  "n_persistence_channels": 2,
+  "repeats": 5,
+  "boundary": "fixed-equation residual construction plus sequence-reset CUSUM on numeric arrays; excludes file parsing, data loading, and calibration",
+  "residual_eval_seconds_median": 1.3763871286064386,
+  "cusum_seconds_median": 0.07842767145484686,
+  "total_seconds_median": 1.4532006215304136,
+  "residual_eval_ms_per_snapshot": 0.0034238485786229817,
+  "cusum_ms_per_snapshot": 0.00019509371008668373,
+  "total_ms_per_snapshot": 0.0036149269192298846,
+  "residual_eval_us_per_snapshot": 3.4238485786229815,
+  "cusum_us_per_snapshot": 0.19509371008668372,
+  "total_us_per_snapshot": 3.6149269192298847,
+  "total_ms_per_channel_snapshot": 7.691333870701883e-05,
+  "residual_eval_seconds_all_repeats": [
+    1.3763871286064386,
+    1.381899100728333,
+    1.3479751041159034,
+    1.3800626741722226,
+    1.3497233428061008
+  ],
+  "cusum_seconds_all_repeats": [
+    0.07681349292397499,
+    0.0787182291969657,
+    0.07746282033622265,
+    0.07842767145484686,
+    0.0788391400128603
+  ],
+  "total_seconds_all_repeats": [
+    1.4532006215304136,
+    1.4606173299252987,
+    1.425437924452126,
+    1.4584903456270695,
+    1.4285624828189611
+  ]
+}

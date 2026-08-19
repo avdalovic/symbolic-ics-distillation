@@ -1,0 +1,16 @@
+attack_id,start,end,attacked_tags,source,official_start,official_end
+1,5138,6618,1_MV_001_STATUS,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,5139,6619
+2,59068,59612,1_FIT_001_PV,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,59069,59613
+3,61057,61621,2_MV_003_STATUS,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,61058,61622
+4,61666,61935,1_AIT_001_PV,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,61667,61936
+5,63045,63890,2_MCV_101_CO;2_MCV_201_CO;2_MCV_301_CO;2_MCV_401_CO;2_MCV_501_CO;2_MCV_601_CO,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,63046,63891
+6,70794,71457,2_FIC_101_PV;2_FIC_201_PV,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,70795,71458
+7,74827,75591,1_AIT_002_PV;2_MV_003_STATUS,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,74828,75592
+8,85238,85778,2_MCV_007_CO,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,85239,85779
+9,147296,147379,1_P_006_STATUS,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,147297,147380
+10,148656,149478,1_MV_001_STATUS,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,148657,149479
+11,149792,150416,2_MCV_007_CO,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,149793,150417
+12,151131,151507,2_MCV_007_CO,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,151132,151508
+13,151660,151852,2_PIC_003_CO;2_PIC_003_SP,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,151661,151853
+14,152173,152741,1_P_001_STATUS;1_P_003_STATUS,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,152174,152742
+15,163803,164220,2_MV_003_STATUS,src/ics_symbolic_distill/data/ics_metadata.py::_WADI_ATTACK_WINDOWS,163804,164221

@@ -1,0 +1,3 @@
+complexity,loss,equation,score,sympy_format,lambda_format,fit_mse,fit_rmse,fit_mae,fit_r2_against_constant,holdout_mse,holdout_rmse,holdout_mae,holdout_r2_against_constant,equation_features,evaluation_error
+1,2.5622747e-20,1.6007107e-10,0.0,1.60071070000000e-10,PySRFunction(X=>1.60071070000000E-10),2.56227474509449e-20,1.6007107e-10,1.6007107000000003e-10,-inf,2.5622747450944903e-20,1.6007107e-10,1.6007106999999998e-10,-inf,[],
+3,0.0,1_LS_001_AL - 1_LS_001_AL,inf,-1_LS_001_AL + 1_LS_001_AL,PySRFunction(X=>-1_LS_001_AL + 1_LS_001_AL),0.0,0.0,0.0,-inf,0.0,0.0,0.0,-inf,"[""1_LS_001_AL""]",

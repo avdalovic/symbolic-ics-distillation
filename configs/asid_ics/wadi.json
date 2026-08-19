@@ -1,0 +1,31 @@
+{
+  "dataset": "WADI",
+  "sampling_rate": "1 second",
+  "train_rows": 784000,
+  "test_rows": 173000,
+  "process_variables": 123,
+  "target": "sensor_delta",
+  "operator_grammar": ["+", "-", "*"],
+  "sample_policy": "coverage_stratified",
+  "sample_size": 20000,
+  "quality_filter": {
+    "finite_predictions_on_training": true,
+    "holdout_cusum_zero_alarm": true,
+    "residual_tail_ratio": "p99(abs(residual)) / median(abs(residual)) <= 50"
+  },
+  "actuator_model": "persistence",
+  "paper_operating_point": {
+    "S": 1.2,
+    "G": 25.0
+  },
+  "geco_operating_point": {
+    "S": 1.32,
+    "G": 9.74
+  },
+  "monitored_variables": {
+    "total": 98,
+    "sensors": 62,
+    "actuators": 36
+  },
+  "public_results": "results/wadi"
+}

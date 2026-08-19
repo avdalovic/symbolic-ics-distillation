@@ -1,0 +1,2 @@
+target,sample_policy,sample_size_requested,sample_size_actual,num_transition_rows,num_delta_bin_rows,num_uniform_fill_rows,delta_min,delta_median,delta_p90,delta_p99,fraction_of_actuator_transition_windows_covered
+P1_B400B,coverage_stratified,23000,23000,132,9199,13669,0.0,4.965768814086914,38.703857421875,101.92934692382812,1.0

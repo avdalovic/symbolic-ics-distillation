@@ -1,0 +1,13 @@
+evaluation:
+  threshold:
+    type: static_quantile
+    alpha: 0.01
+    fit_on: val_normal
+  metrics:
+    - fpr
+    - precision
+    - recall
+    - f1
+    - roc_auc
+    - pr_auc
+    - detection_delay

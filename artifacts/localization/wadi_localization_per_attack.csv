@@ -1,0 +1,16 @@
+dataset,attack_id,attacked_tags,alert_nodes,n_alert_nodes,detected,nearest_alert_node,nearest_attack_target,nearest_distance,mean_alert_distance,median_alert_distance,exact_target_alert,within_1_hop,within_2_hops,within_3_hops,disconnected_alert_count
+WADI,1,1_MV_001_STATUS,,0,False,,,inf,inf,inf,False,False,False,False,0
+WADI,2,1_FIT_001_PV,1_FIT_001_PV,1,True,1_FIT_001_PV,1_FIT_001_PV,0.0,0.0,0.0,True,True,True,True,0
+WADI,3,2_MV_003_STATUS,2_LT_002_PV,1,True,2_LT_002_PV,2_MV_003_STATUS,2.0,2.0,2.0,False,False,True,True,0
+WADI,4,1_AIT_001_PV,2_LT_002_PV,1,True,2_LT_002_PV,,inf,inf,inf,False,False,False,False,1
+WADI,5,2_MCV_101_CO;2_MCV_201_CO;2_MCV_301_CO;2_MCV_401_CO;2_MCV_501_CO;2_MCV_601_CO,,0,False,,,inf,inf,inf,False,False,False,False,0
+WADI,6,2_FIC_101_PV;2_FIC_201_PV,,0,False,,,inf,inf,inf,False,False,False,False,0
+WADI,7,1_AIT_002_PV;2_MV_003_STATUS,1_AIT_002_PV,1,True,1_AIT_002_PV,1_AIT_002_PV,0.0,0.0,0.0,True,True,True,True,0
+WADI,8,2_MCV_007_CO,2_MCV_007_CO,1,True,2_MCV_007_CO,2_MCV_007_CO,0.0,0.0,0.0,True,True,True,True,0
+WADI,9,1_P_006_STATUS,1_P_006_STATUS,1,True,1_P_006_STATUS,1_P_006_STATUS,0.0,0.0,0.0,True,True,True,True,0
+WADI,10,1_MV_001_STATUS,1_FIT_001_PV;1_MV_001_STATUS;1_P_001_STATUS;1_P_003_STATUS;1_P_005_STATUS;2_FIT_001_PV;2_MV_003_STATUS,7,True,1_MV_001_STATUS,1_MV_001_STATUS,0.0,inf,3.0,True,True,True,True,1
+WADI,11,2_MCV_007_CO,2_MCV_007_CO;PLANT_START_STOP_LOG,2,True,2_MCV_007_CO,2_MCV_007_CO,0.0,0.5,0.5,True,True,True,True,0
+WADI,12,2_MCV_007_CO,2_FIT_003_PV;2_MCV_007_CO;PLANT_START_STOP_LOG,3,True,2_MCV_007_CO,2_MCV_007_CO,0.0,inf,1.0,True,True,True,True,1
+WADI,13,2_PIC_003_CO;2_PIC_003_SP,,0,False,,,inf,inf,inf,False,False,False,False,0
+WADI,14,1_P_001_STATUS;1_P_003_STATUS,,0,False,,,inf,inf,inf,False,False,False,False,0
+WADI,15,2_MV_003_STATUS,,0,False,,,inf,inf,inf,False,False,False,False,0

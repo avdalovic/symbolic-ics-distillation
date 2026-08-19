@@ -1,0 +1,2 @@
+dataset,attack_id,attacked_tags,alert_nodes,nearest_distance,n_alert_nodes,figure,note
+SWaT,3,LIT101,LIT101,0.0,1,swat_attack3_lit101_local_dependency_graph.pdf,Readable equation-local dependency graph.

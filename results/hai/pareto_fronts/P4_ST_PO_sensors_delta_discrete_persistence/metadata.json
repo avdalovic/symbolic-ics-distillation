@@ -1,0 +1,32 @@
+{
+  "dataset": "HAI-21.03",
+  "elapsed_seconds": 665.592376947403,
+  "error": "",
+  "max_complexity": 15,
+  "operator_set": "safe_mul",
+  "pysr_params": {
+    "binary_operators": [
+      "+",
+      "-",
+      "*"
+    ],
+    "extra_sympy_mappings": {},
+    "maxsize": 15,
+    "model_selection": "score",
+    "niterations": 400,
+    "parsimony": 0.01,
+    "populations": 20,
+    "procs": 1,
+    "progress": false,
+    "random_state": 2983,
+    "temp_equation_file": true,
+    "timeout_in_seconds": 3600,
+    "unary_operators": [],
+    "verbosity": 0
+  },
+  "sample_policy": "coverage_stratified_sequence_safe",
+  "status": "completed",
+  "target": "P4_ST_PO",
+  "target_mode": "sensors_delta_discrete_persistence",
+  "timeout_minutes": 60.0
+}

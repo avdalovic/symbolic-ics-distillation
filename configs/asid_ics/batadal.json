@@ -1,0 +1,31 @@
+{
+  "dataset": "BATADAL",
+  "sampling_rate": "1 hour",
+  "train_rows": 8761,
+  "test_rows": 4177,
+  "process_variables": 43,
+  "target": "sensor_delta",
+  "operator_grammar": ["+", "-", "*"],
+  "sample_policy": "all_rows",
+  "sample_size": "all",
+  "quality_filter": {
+    "finite_predictions_on_training": true,
+    "holdout_cusum_zero_alarm": true,
+    "residual_tail_ratio": "p99(abs(residual)) / median(abs(residual)) <= 50"
+  },
+  "actuator_model": "persistence",
+  "paper_operating_point": {
+    "S": 1.4,
+    "G": 2.0
+  },
+  "geco_operating_point": {
+    "S": 1.39,
+    "G": 2.16
+  },
+  "monitored_variables": {
+    "total": 42,
+    "sensors": 30,
+    "actuators": 12
+  },
+  "public_results": "results/batadal"
+}

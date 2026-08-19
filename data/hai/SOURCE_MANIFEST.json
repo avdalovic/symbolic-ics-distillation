@@ -1,0 +1,257 @@
+{
+  "converter_command": [
+    "python",
+    "transcribe.py"
+  ],
+  "expected": {
+    "attack_count": 50,
+    "test_files": 5,
+    "training_files": 3
+  },
+  "generated_files": [
+    {
+      "bytes": 36053382,
+      "name": "train1.state.gz",
+      "path": "data/hai/ipal/train1.state.gz",
+      "sha256": "f0f103d342c0bcbb22da702edbbbbfd28c6c3051c869621ec6f4b41e422e88a6"
+    },
+    {
+      "bytes": 36876103,
+      "name": "train2.state.gz",
+      "path": "data/hai/ipal/train2.state.gz",
+      "sha256": "9903448cee5643c37f239d9a26e40e30411ca6880b4da615235a6b38cafc024b"
+    },
+    {
+      "bytes": 80019108,
+      "name": "train3.state.gz",
+      "path": "data/hai/ipal/train3.state.gz",
+      "sha256": "9a53a05e8fe902f736c93ff97502c3970b2707acd2e1555e886d2dde79fce948"
+    },
+    {
+      "bytes": 7222670,
+      "name": "test1.state.gz",
+      "path": "data/hai/ipal/test1.state.gz",
+      "sha256": "cd5122798bff9af80c26c018ccd1e006041a1c074e2074c5987ee12b706c95ed"
+    },
+    {
+      "bytes": 19705054,
+      "name": "test2.state.gz",
+      "path": "data/hai/ipal/test2.state.gz",
+      "sha256": "b78cef3e48fd9296bf00ec1da4d6840aedb5ab76f8072ca3a27283cd7c12c864"
+    },
+    {
+      "bytes": 18182333,
+      "name": "test3.state.gz",
+      "path": "data/hai/ipal/test3.state.gz",
+      "sha256": "a2637bd48e976954a36a563f69b00bcbe11156b82a4575ef231f09b28cb68c75"
+    },
+    {
+      "bytes": 6585438,
+      "name": "test4.state.gz",
+      "path": "data/hai/ipal/test4.state.gz",
+      "sha256": "494982274983e0dd27530b41e0635f57c066cb282911e440479da82702ff3dd3"
+    },
+    {
+      "bytes": 15511170,
+      "name": "test5.state.gz",
+      "path": "data/hai/ipal/test5.state.gz",
+      "sha256": "5aaf92b20b91118f8b2093946059f6138a73bd17a619dd02b0bb783e7967cca0"
+    },
+    {
+      "bytes": 10311,
+      "name": "attacks.json",
+      "path": "data/hai/ipal/attacks.json",
+      "sha256": "b904648e133bb54a1ca86b1dfb99be5f8f9349d0d28ad3ffde83c0502252aca6"
+    }
+  ],
+  "hai_release": "21.03",
+  "hai_repository": {
+    "commit_sha": "2a814cebc9a66b06c9e5cd545e2d72e65d383737",
+    "dataset_directory": "hai-21.03",
+    "url": "https://github.com/icsdataset/hai"
+  },
+  "ipal_repository": {
+    "commit_sha": "8b08c6098646a51f937993208859a110739391e3",
+    "converter_directory": "HAI",
+    "url": "https://github.com/ipal-ids/ipal_datasets"
+  },
+  "observed": {
+    "attack_count": 50,
+    "test_files": 5,
+    "training_files": 3
+  },
+  "sequences": [
+    {
+      "attack_ids": "[]",
+      "attack_rows": 0,
+      "max_gap_seconds": 1,
+      "min_gap_seconds": 1,
+      "non_1s_gap_count": 0,
+      "path": "data/hai/ipal/train1.state.gz",
+      "rows": 216001,
+      "sequence": "train1.state.gz",
+      "sha256": "f0f103d342c0bcbb22da702edbbbbfd28c6c3051c869621ec6f4b41e422e88a6",
+      "split": "train",
+      "timestamp_end": 1594659600,
+      "timestamp_start": 1594443600,
+      "variables": 79
+    },
+    {
+      "attack_ids": "[]",
+      "attack_rows": 0,
+      "max_gap_seconds": 1,
+      "min_gap_seconds": 1,
+      "non_1s_gap_count": 0,
+      "path": "data/hai/ipal/train2.state.gz",
+      "rows": 226801,
+      "sequence": "train2.state.gz",
+      "sha256": "9903448cee5643c37f239d9a26e40e30411ca6880b4da615235a6b38cafc024b",
+      "split": "train",
+      "timestamp_end": 1596477600,
+      "timestamp_start": 1596250800,
+      "variables": 79
+    },
+    {
+      "attack_ids": "[]",
+      "attack_rows": 0,
+      "max_gap_seconds": 1,
+      "min_gap_seconds": 1,
+      "non_1s_gap_count": 0,
+      "path": "data/hai/ipal/train3.state.gz",
+      "rows": 478801,
+      "sequence": "train3.state.gz",
+      "sha256": "9a53a05e8fe902f736c93ff97502c3970b2707acd2e1555e886d2dde79fce948",
+      "split": "train",
+      "timestamp_end": 1597075200,
+      "timestamp_start": 1596596400,
+      "variables": 79
+    },
+    {
+      "attack_ids": "[1, 2, 3, 4, 5]",
+      "attack_rows": 629,
+      "max_gap_seconds": 1,
+      "min_gap_seconds": 1,
+      "non_1s_gap_count": 0,
+      "path": "data/hai/ipal/test1.state.gz",
+      "rows": 43201,
+      "sequence": "test1.state.gz",
+      "sha256": "cd5122798bff9af80c26c018ccd1e006041a1c074e2074c5987ee12b706c95ed",
+      "split": "test",
+      "timestamp_end": 1594195200,
+      "timestamp_start": 1594152000,
+      "variables": 79
+    },
+    {
+      "attack_ids": "[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]",
+      "attack_rows": 3449,
+      "max_gap_seconds": 1,
+      "min_gap_seconds": 1,
+      "non_1s_gap_count": 0,
+      "path": "data/hai/ipal/test2.state.gz",
+      "rows": 118801,
+      "sequence": "test2.state.gz",
+      "sha256": "b78cef3e48fd9296bf00ec1da4d6840aedb5ab76f8072ca3a27283cd7c12c864",
+      "split": "test",
+      "timestamp_end": 1594443600,
+      "timestamp_start": 1594324800,
+      "variables": 79
+    },
+    {
+      "attack_ids": "[26, 27, 28, 29, 30, 31, 32, 33]",
+      "attack_rows": 1535,
+      "max_gap_seconds": 1,
+      "min_gap_seconds": 1,
+      "non_1s_gap_count": 0,
+      "path": "data/hai/ipal/test3.state.gz",
+      "rows": 108001,
+      "sequence": "test3.state.gz",
+      "sha256": "a2637bd48e976954a36a563f69b00bcbe11156b82a4575ef231f09b28cb68c75",
+      "split": "test",
+      "timestamp_end": 1594724400,
+      "timestamp_start": 1594616400,
+      "variables": 79
+    },
+    {
+      "attack_ids": "[34, 35, 36, 37, 38]",
+      "attack_rows": 1157,
+      "max_gap_seconds": 1,
+      "min_gap_seconds": 1,
+      "non_1s_gap_count": 0,
+      "path": "data/hai/ipal/test4.state.gz",
+      "rows": 39601,
+      "sequence": "test4.state.gz",
+      "sha256": "494982274983e0dd27530b41e0635f57c066cb282911e440479da82702ff3dd3",
+      "split": "test",
+      "timestamp_end": 1595995200,
+      "timestamp_start": 1595955600,
+      "variables": 79
+    },
+    {
+      "attack_ids": "[39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]",
+      "attack_rows": 2177,
+      "max_gap_seconds": 1,
+      "min_gap_seconds": 1,
+      "non_1s_gap_count": 0,
+      "path": "data/hai/ipal/test5.state.gz",
+      "rows": 92401,
+      "sequence": "test5.state.gz",
+      "sha256": "5aaf92b20b91118f8b2093946059f6138a73bd17a619dd02b0bb783e7967cca0",
+      "split": "test",
+      "timestamp_end": 1596216600,
+      "timestamp_start": 1596124200,
+      "variables": 79
+    }
+  ],
+  "setup_timestamp_utc": "2026-08-05T21:40:26.546749Z",
+  "source_files": [
+    {
+      "bytes": 30651421,
+      "name": "train1.csv.gz",
+      "path": "artifacts/datasets/upstream/hai/hai-21.03/train1.csv.gz",
+      "sha256": "fdd0162315b32817ba665e2cc8990eb09c47c4edc29683a86b11dc9df062b3a9"
+    },
+    {
+      "bytes": 31430645,
+      "name": "train2.csv.gz",
+      "path": "artifacts/datasets/upstream/hai/hai-21.03/train2.csv.gz",
+      "sha256": "c330af06a24f5fe3df864dddc0e9cbbbfd27db2e005bd32dc8ab3eb2ab356337"
+    },
+    {
+      "bytes": 67961579,
+      "name": "train3.csv.gz",
+      "path": "artifacts/datasets/upstream/hai/hai-21.03/train3.csv.gz",
+      "sha256": "de09120c617bad5f4f3cab86705137fe7ced4b1123fb67ffdf67fd645f3d1b8f"
+    },
+    {
+      "bytes": 6149549,
+      "name": "test1.csv.gz",
+      "path": "artifacts/datasets/upstream/hai/hai-21.03/test1.csv.gz",
+      "sha256": "532de41bed372206941609d05b763958f59abecfd63c8c123649f823452e445e"
+    },
+    {
+      "bytes": 16765328,
+      "name": "test2.csv.gz",
+      "path": "artifacts/datasets/upstream/hai/hai-21.03/test2.csv.gz",
+      "sha256": "c5572e0ed19906107ceb56c4b4f40e165153fc7ba87b3506230d53d2478c29bb"
+    },
+    {
+      "bytes": 15477098,
+      "name": "test3.csv.gz",
+      "path": "artifacts/datasets/upstream/hai/hai-21.03/test3.csv.gz",
+      "sha256": "bff835894baff0c73871bc01ece4f5cf759d455a049e808b012128767420caaf"
+    },
+    {
+      "bytes": 5602841,
+      "name": "test4.csv.gz",
+      "path": "artifacts/datasets/upstream/hai/hai-21.03/test4.csv.gz",
+      "sha256": "51380fd28fd985b94a10cae3d8b80926becb3af9f233f2d3a38ab8be9482a482"
+    },
+    {
+      "bytes": 13199829,
+      "name": "test5.csv.gz",
+      "path": "artifacts/datasets/upstream/hai/hai-21.03/test5.csv.gz",
+      "sha256": "f0d59308b167ed95d0e81fb3e27c906682c9b21d3dba0ab4c4d696565df35179"
+    }
+  ],
+  "source_to_generated_mapping": {}
+}

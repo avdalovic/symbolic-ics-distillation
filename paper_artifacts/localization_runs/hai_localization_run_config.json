@@ -1,0 +1,238 @@
+{
+  "G": 12.0,
+  "S": 2.5,
+  "dataset": "HAI",
+  "graph_stats": {
+    "isolated_nodes": [
+      "P1_FCV03Z",
+      "P1_PCV02Z",
+      "P1_PP01AD",
+      "P1_PP01AR",
+      "P1_PP01BD",
+      "P1_PP01BR",
+      "P1_PP02D",
+      "P1_PP02R",
+      "P1_STSP",
+      "P2_ASD",
+      "P2_AutoGO",
+      "P2_AutoSD",
+      "P2_CO_rpm",
+      "P2_Emerg",
+      "P2_HILout",
+      "P2_LCV01D",
+      "P2_MSD",
+      "P2_ManualGO",
+      "P2_OnOff",
+      "P2_RTR",
+      "P2_SCO",
+      "P2_SIT01",
+      "P2_SIT02",
+      "P2_TripEx",
+      "P2_VTR01",
+      "P2_VTR02",
+      "P2_VTR03",
+      "P2_VTR04",
+      "P2_VXT03",
+      "P2_VYT02",
+      "P3_LH",
+      "P3_LL",
+      "P4_HT_PS",
+      "P4_ST_PS"
+    ],
+    "largest_component_size": 45,
+    "n_connected_components": 36,
+    "n_edges": 65,
+    "n_nodes": 82
+  },
+  "sample_period_seconds": 1,
+  "selected_targets": [
+    "P1_B2004",
+    "P1_B2016",
+    "P1_B3004",
+    "P1_B3005",
+    "P1_B4002",
+    "P1_B4005",
+    "P1_B400B",
+    "P1_B4022",
+    "P1_FCV01D",
+    "P1_FCV01Z",
+    "P1_FCV02D",
+    "P1_FCV02Z",
+    "P1_FCV03D",
+    "P1_FT01",
+    "P1_FT01Z",
+    "P1_FT02",
+    "P1_FT02Z",
+    "P1_FT03",
+    "P1_FT03Z",
+    "P1_LCV01D",
+    "P1_LCV01Z",
+    "P1_LIT01",
+    "P1_PCV01D",
+    "P1_PCV01Z",
+    "P1_PIT01",
+    "P1_TIT01",
+    "P1_TIT02",
+    "P2_24Vdc",
+    "P2_CO_rpm",
+    "P2_HILout",
+    "P2_VYT03",
+    "P3_FIT01",
+    "P3_LCP01D",
+    "P3_LCV01D",
+    "P3_LIT01",
+    "P4_HT_FD",
+    "P4_HT_LD",
+    "P4_HT_PO",
+    "P4_HT_PS",
+    "P4_LD",
+    "P4_ST_FD",
+    "P4_ST_GOV",
+    "P4_ST_LD",
+    "P4_ST_PO",
+    "P4_ST_PS",
+    "P4_ST_PT01",
+    "P4_ST_TT01"
+  ],
+  "source_note": "HAI seed-0 safe grammar without GeCo ignored variables",
+  "unobserved_official_attack_targets": [
+    {
+      "attack_id": "4",
+      "attacked_tag": "P2_SCO",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "5",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "16",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "17",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "20",
+      "attacked_tag": "P2_SCO",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "25",
+      "attacked_tag": "P2_LCV01D",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "29",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "30",
+      "attacked_tag": "P2_SCO",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "31",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "33",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "35",
+      "attacked_tag": "P2_LCV01D",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "36",
+      "attacked_tag": "P2_LCV01D",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "37",
+      "attacked_tag": "P2_SCO",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "38",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "38",
+      "attacked_tag": "P2_LCV01D",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "40",
+      "attacked_tag": "P2_SCO",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "41",
+      "attacked_tag": "P2_SCO",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "42",
+      "attacked_tag": "P2_LCV01D",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "43",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "44",
+      "attacked_tag": "P2_SCO",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "44",
+      "attacked_tag": "P2_LCV01D",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "45",
+      "attacked_tag": "P2_AutoSD",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    },
+    {
+      "attack_id": "49",
+      "attacked_tag": "P2_LCV01D",
+      "reason": "official_attack_target_absent_from_logged_state_schema",
+      "source": "data/hai/ipal/attacks.json::attack_point"
+    }
+  ]
+}

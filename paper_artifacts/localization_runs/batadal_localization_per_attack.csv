@@ -1,0 +1,15 @@
+dataset,attack_id,attacked_tags,alert_nodes,n_alert_nodes,detected,nearest_alert_node,nearest_attack_target,nearest_distance,mean_alert_distance,median_alert_distance,exact_target_alert,within_1_hop,within_2_hops,within_3_hops,disconnected_alert_count
+BATADAL,1,L_T7,F_PU11;L_T7;P_J302;P_J307;P_J317;S_PU10;S_PU11,7,True,L_T7,L_T7,0.0,inf,inf,True,True,True,True,4
+BATADAL,2,L_T7,F_PU10;L_T6;P_J302;P_J307;P_J317,5,True,L_T6,L_T7,1.0,inf,2.0,False,True,True,True,2
+BATADAL,3,L_T1,F_PU1;F_PU2;F_PU8;L_T1;P_J14;P_J269;P_J302;P_J306;P_J307;S_PU2,10,True,L_T1,L_T1,0.0,inf,inf,True,True,True,True,7
+BATADAL,4,L_T1,F_PU8;L_T1;P_J14;P_J302;P_J306;P_J307,6,True,L_T1,L_T1,0.0,inf,inf,True,True,True,True,4
+BATADAL,5,F_PU7,F_PU6;P_J415;S_PU6,3,True,P_J415,F_PU7,1.0,inf,inf,False,True,True,True,2
+BATADAL,6,F_PU7,F_PU6;L_T4;P_J415;S_PU6,4,True,P_J415,F_PU7,1.0,inf,inf,False,True,True,True,2
+BATADAL,7,F_PU7,F_PU7;P_J415,2,True,F_PU7,F_PU7,0.0,0.5,0.5,True,True,True,True,0
+BATADAL,8,L_T3,P_J256,1,True,P_J256,L_T3,1.0,1.0,1.0,False,True,True,True,0
+BATADAL,9,L_T2,F_V2;P_J289;P_J300;P_J422,4,True,F_V2,,inf,inf,inf,False,False,False,False,4
+BATADAL,10,F_PU3,F_PU3;F_PU9;S_PU3,3,True,F_PU3,F_PU3,0.0,inf,inf,True,True,True,True,2
+BATADAL,11,F_PU3,F_PU1;F_PU3;F_PU9;L_T1;S_PU1;S_PU3,6,True,F_PU3,F_PU3,0.0,inf,inf,True,True,True,True,5
+BATADAL,12,F_PU3,L_T2;P_J289;P_J300,3,True,L_T2,,inf,inf,inf,False,False,False,False,3
+BATADAL,13,L_T7,P_J302,1,True,P_J302,,inf,inf,inf,False,False,False,False,1
+BATADAL,14,L_T4,F_PU7;P_J415,2,True,P_J415,L_T4,1.0,1.5,1.5,False,True,True,True,0

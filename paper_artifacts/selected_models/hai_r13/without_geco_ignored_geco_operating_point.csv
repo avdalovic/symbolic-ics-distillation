@@ -1,0 +1,2 @@
+dataset,variant,S,G,point_kind,num_monitored,monitored_symbolic,monitored_persistence,Precision,Recall,F1,eTaP,eTaR,eTaF1,FPA,Scen,TP,FP,TN,FN
+HAI,without_geco_ignored,8.02147642080159,1.4376682451456457,geco_operating_point,47,45,2,69.0329493704795,28.802950709735107,40.646687697160885,63.85422180655056,50.159992709136766,56.1847014228824,14.0,68.0,2577,1156,391897,6370

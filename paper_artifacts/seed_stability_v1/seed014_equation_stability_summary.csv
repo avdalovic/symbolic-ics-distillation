@@ -1,0 +1,5 @@
+dataset,seeds,counts,intersection,union,target_IoU,mean_pair_target_jaccard,mean_input_jaccard,median_input_jaccard,identical_input_set_targets,identical_input_set_pct,exact_equation_pair_rate
+SWaT,0/1/4,0:16;1:17;4:17,15,19,0.7895,0.8519,0.6804,0.6667,7,46.7,0.0
+WADI,0/1/4,0:63;1:63;4:62,61,64,0.9531,0.9687,0.6577,0.6667,27,44.3,0.0219
+BATADAL,0/1/4,0:31;1:31;4:31,31,31,1.0,1.0,0.7581,1.0,19,61.3,0.0538
+HAI_R13,0/1/4,0:47;1:45;4:48,45,48,0.9375,0.958,0.7236,1.0,26,57.8,0.0815

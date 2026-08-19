@@ -1,0 +1,2 @@
+dataset,attack_id,target,equation,attack_start_index,attack_end_index,threshold,max_cusum_in_attack,first_crossing_index,detection_delay_seconds,max_threshold_ratio,figure
+SWaT,3,LIT101,(-FIT101 + FIT201)*(-0.19228067),4900,5281,8.81047022882999,15.641664174784076,5001,101,1.775349529427018,swat_attack3_lit101_trace.pdf

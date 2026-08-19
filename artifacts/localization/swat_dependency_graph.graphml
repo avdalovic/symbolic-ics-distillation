@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="directed">
+    <node id="AIT201" />
+    <node id="AIT202" />
+    <node id="AIT203" />
+    <node id="AIT401" />
+    <node id="AIT402" />
+    <node id="AIT501" />
+    <node id="AIT502" />
+    <node id="AIT503" />
+    <node id="AIT504" />
+    <node id="DPIT301" />
+    <node id="FIT101" />
+    <node id="FIT201" />
+    <node id="FIT301" />
+    <node id="FIT401" />
+    <node id="FIT501" />
+    <node id="FIT502" />
+    <node id="FIT503" />
+    <node id="FIT504" />
+    <node id="FIT601" />
+    <node id="LIT101" />
+    <node id="LIT301" />
+    <node id="LIT401" />
+    <node id="MV101" />
+    <node id="MV201" />
+    <node id="MV301" />
+    <node id="MV302" />
+    <node id="MV303" />
+    <node id="MV304" />
+    <node id="P101" />
+    <node id="P102" />
+    <node id="P201" />
+    <node id="P202" />
+    <node id="P203" />
+    <node id="P204" />
+    <node id="P205" />
+    <node id="P206" />
+    <node id="P301" />
+    <node id="P302" />
+    <node id="P401" />
+    <node id="P402" />
+    <node id="P403" />
+    <node id="P404" />
+    <node id="P501" />
+    <node id="P502" />
+    <node id="P601" />
+    <node id="P602" />
+    <node id="P603" />
+    <node id="PIT501" />
+    <node id="PIT502" />
+    <node id="PIT503" />
+    <node id="UV401" />
+    <edge source="AIT504" target="FIT501" />
+    <edge source="DPIT301" target="LIT401" />
+    <edge source="FIT101" target="LIT101" />
+    <edge source="FIT201" target="LIT101" />
+    <edge source="FIT201" target="LIT301" />
+    <edge source="FIT301" target="AIT401" />
+    <edge source="FIT301" target="DPIT301" />
+    <edge source="FIT301" target="FIT201" />
+    <edge source="FIT301" target="FIT601" />
+    <edge source="FIT301" target="LIT301" />
+    <edge source="FIT401" target="PIT503" />
+    <edge source="FIT502" target="FIT504" />
+    <edge source="FIT503" target="PIT503" />
+    <edge source="FIT504" target="AIT504" />
+    <edge source="LIT101" target="FIT101" />
+    <edge source="MV303" target="FIT301" />
+    <edge source="MV304" target="AIT401" />
+    <edge source="P302" target="DPIT301" />
+    <edge source="P402" target="FIT502" />
+    <edge source="P402" target="PIT503" />
+    <edge source="P602" target="FIT601" />
+    <edge source="PIT502" target="AIT504" />
+    <edge source="UV401" target="FIT502" />
+    <edge source="UV401" target="PIT503" />
+  </graph>
+</graphml>

@@ -1,0 +1,59 @@
+{
+  "SWaT": {
+    "feature_list": "results/swat/per_sensor_residual_stats.csv",
+    "feature_column": "target",
+    "selected": {
+      "0": "results/swat/selected_equations.csv",
+      "1": "artifacts/experiments/seed3/swat_seed1_no_holdout_quality_gate/selected_equations_no_holdout_quality_gate.csv",
+      "4": "artifacts/experiments/seed3/swat_seed4_no_holdout_quality_gate/selected_equations_no_holdout_quality_gate.csv"
+    },
+    "pareto_root": {
+      "0": "results/swat/pareto_fronts"
+    }
+  },
+  "WADI": {
+    "feature_list": "results/wadi/variable_name_mapping.csv",
+    "feature_column": "original_name",
+    "selected": {
+      "0": "results/wadi/selected_equations.csv",
+      "1": "artifacts/experiments/seed3/wadi_seed1/selected_equations.csv",
+      "4": "artifacts/experiments/seed3/wadi_seed4/selected_equations.csv"
+    },
+    "pareto_root": {
+      "0": "results/wadi"
+    }
+  },
+  "BATADAL": {
+    "feature_list": "results/batadal/variable_classification.csv",
+    "feature_column": "variable",
+    "selected": {
+      "0": "paper_artifacts/selected_models/batadal/selected_equations.csv",
+      "1": "artifacts/experiments/seed3/batadal_seed1_guarded/selected_equations.csv",
+      "4": "artifacts/experiments/seed3/batadal_seed4/selected_equations.csv"
+    },
+    "pareto_root": {
+      "0": "results/batadal"
+    }
+  },
+  "HAI_R13": {
+    "feature_list": "artifacts/experiments/seed3/hai_safe_seed4/variable_typing.csv",
+    "feature_column": "variable",
+    "drop_targets": [
+      "P1_PCV02Z",
+      "P2_SIT01",
+      "P2_SIT02",
+      "P2_VT01",
+      "P2_VXT02",
+      "P2_VXT03",
+      "P2_VYT02"
+    ],
+    "selected": {
+      "0": "paper_artifacts/selected_models/hai/selected_equations.csv",
+      "1": "artifacts/experiments/seed3/hai_seed1/selected_equations.csv",
+      "4": "artifacts/experiments/seed3/hai_safe_seed4/selected_equations.csv"
+    },
+    "pareto_root": {
+      "0": "results/hai"
+    }
+  }
+}
